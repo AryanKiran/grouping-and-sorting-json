@@ -1,0 +1,237 @@
+{
+  "info": {
+    "name": "JSON Dataset API",
+    "description": "Complete collection for testing JSON Dataset API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "health"]
+        },
+        "description": "Check if the API is running"
+      }
+    },
+    {
+      "name": "Insert Record - Employee 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"department\": \"Engineering\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/employee_dataset/record",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "employee_dataset", "record"]
+        },
+        "description": "Insert first employee record"
+      }
+    },
+    {
+      "name": "Insert Record - Employee 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 2,\n  \"name\": \"Jane Smith\",\n  \"age\": 25,\n  \"department\": \"Engineering\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/employee_dataset/record",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "employee_dataset", "record"]
+        },
+        "description": "Insert second employee record"
+      }
+    },
+    {
+      "name": "Insert Record - Employee 3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 3,\n  \"name\": \"Alice Brown\",\n  \"age\": 28,\n  \"department\": \"Marketing\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/employee_dataset/record",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "employee_dataset", "record"]
+        },
+        "description": "Insert third employee record"
+      }
+    },
+    {
+      "name": "Query - Group By Department",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/employee_dataset/query?groupBy=department",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "employee_dataset", "query"],
+          "query": [
+            {
+              "key": "groupBy",
+              "value": "department"
+            }
+          ]
+        },
+        "description": "Group employees by department"
+      }
+    },
+    {
+      "name": "Query - Sort By Age (Ascending)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/employee_dataset/query?sortBy=age&order=asc",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "employee_dataset", "query"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "age"
+            },
+            {
+              "key": "order",
+              "value": "asc"
+            }
+          ]
+        },
+        "description": "Sort employees by age in ascending order"
+      }
+    },
+    {
+      "name": "Query - Sort By Age (Descending)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/employee_dataset/query?sortBy=age&order=desc",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "employee_dataset", "query"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "age"
+            },
+            {
+              "key": "order",
+              "value": "desc"
+            }
+          ]
+        },
+        "description": "Sort employees by age in descending order"
+      }
+    },
+    {
+      "name": "Query - Sort By Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/employee_dataset/query?sortBy=name&order=asc",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "employee_dataset", "query"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "name"
+            },
+            {
+              "key": "order",
+              "value": "asc"
+            }
+          ]
+        },
+        "description": "Sort employees by name alphabetically"
+      }
+    },
+    {
+      "name": "Insert Record - Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"name\": \"Laptop\",\n  \"category\": \"Electronics\",\n  \"price\": 1200,\n  \"inStock\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/products/record",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "products", "record"]
+        },
+        "description": "Insert a product into a different dataset"
+      }
+    },
+    {
+      "name": "Query - Group By Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dataset/products/query?groupBy=category",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "dataset", "products", "query"],
+          "query": [
+            {
+              "key": "groupBy",
+              "value": "category"
+            }
+          ]
+        },
+        "description": "Group products by category"
+      }
+    }
+  ]
+}
